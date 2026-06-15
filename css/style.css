@@ -1,0 +1,198 @@
+/* 1. Reset básico e variáveis ****************************/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Colors */
+  --yellow: hsl(47, 88%, 63%);
+  --white: hsl(0, 0%, 100%);
+  --gray-500: hsl(0, 0%, 42%);
+  --gray-950: hsl(0, 0%, 7%);
+
+  /* Typography */
+  --font-family: "Figtree", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-size-body: 16px;
+
+  /* Layout */
+  --card-max-width: 384px;
+  --card-radius: 20px;
+  --card-padding: 24px;
+
+  /* Shadow style (flat offset) */
+  --shadow-offset-x: 8px;
+  --shadow-offset-y: 8px;
+}
+
+/* 2. Body / Página ****************************************/
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  background-color: var(--yellow);
+  color: var(--gray-950);
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* 3. Card *************************************************/
+
+.card {
+  background-color: var(--white);
+  border: 1px solid var(--gray-950);
+  border-radius: var(--card-radius);
+  max-width: var(--card-max-width);
+  width: 100%;
+  padding: var(--card-padding);
+  box-shadow: var(--shadow-offset-x) var(--shadow-offset-y) 0 0 var(--gray-950);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 3.1 Imagem do card */
+
+.card__image-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 3.2 Corpo do card */
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Badge */
+
+.card__badge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background-color: var(--yellow);
+  color: var(--gray-950);
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+/* Meta */
+
+.card__meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--gray-950);
+}
+
+/* Título */
+
+.card__title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.card__title-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+/* Hover / focus do título */
+
+.card__title-link:hover,
+.card__title-link:focus-visible {
+  color: var(--yellow);
+  outline: none;
+}
+
+/* Excerpt */
+
+.card__excerpt {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--gray-500);
+}
+
+/* Autor */
+
+.card__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.card__author-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: block;
+}
+
+.card__author-name {
+  margin: 0;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+/* 4. Acessibilidade: foco genérico ************************/
+
+:focus-visible {
+  outline: 2px solid var(--gray-950);
+  outline-offset: 4px;
+}
+
+/* 5. Responsividade ****************************************/
+
+/* Mobile first: já planejado para telas menores. 
+   Ajustes leves para telas maiores.
+*/
+
+@media (min-width: 768px) {
+  :root {
+    --card-max-width: 384px;
+    --card-padding: 24px;
+  }
+
+  .page {
+    padding: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --card-max-width: 400px;
+  }
+
+  .card {
+    gap: 24px;
+  }
+}

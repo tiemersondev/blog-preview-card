@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blog preview card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Blog preview card: HTML & CSS foundations article card with accessible hover and focus states."
+    />
+    <link rel="icon" href="assets/images/favicon-32x32.png" type="image/x-icon" />
+
+    <!-- Google Fonts: Figtree -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main class="page" aria-label="Blog preview card example">
+      <article class="card" aria-labelledby="article-title">
+        <div class="card__image-wrapper">
+          <img
+            src="./assets/images/illustration-article.svg"
+            alt="Abstract shapes representing web layout elements"
+            class="card__image"
+          />
+        </div>
+
+        <div class="card__body">
+          <p class="card__badge">Learning</p>
+
+          <p class="card__meta">Published 15 Jun 2026</p>
+
+          <h1 class="card__title" id="article-title">
+            <a
+              href="#"
+              class="card__title-link"
+              aria-label="Read the article HTML & CSS foundations"
+            >
+              HTML & CSS foundations
+            </a>
+          </h1>
+
+          <p class="card__excerpt">
+            These languages are the backbone of every website, defining
+            structure, content, and presentation.
+          </p>
+
+          <footer class="card__author">
+            <img
+              src="assets/images/eu.jpeg"
+              alt="Portrait of Emerson ALexandre"
+              class="card__author-avatar"
+            />
+            <p class="card__author-name">Emerson Alexandre</p>
+          </footer>
+        </div>
+      </article>
+    </main>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
